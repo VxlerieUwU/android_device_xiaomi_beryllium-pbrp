@@ -18,7 +18,12 @@
 # Release name
 PRODUCT_RELEASE_NAME := beryllium
 
-$(call inherit-product, build/target/product/embedded.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+# Inherit from beryllium device
+$(call inherit-product, device/xiaomi/beryllium/device.mk)
+
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/pb/config/common.mk)
